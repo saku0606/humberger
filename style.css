@@ -1,73 +1,180 @@
+/* ゲームっぽいフォントと配色 */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #fff8f0;
     margin: 0;
-    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #ffe0b2, #ffcc80);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+  }
+  
+  .title {
+    margin: 30px 0;
+    font-size: 2.5rem;
+    color: #4e342e;
     text-align: center;
   }
   
-  h1, h2 {
+  .subtitle {
+    font-size: 1.8rem;
     margin: 20px 0;
-    color: #d32f2f;
-    font-size: 5vw;
+    color: #5d4037;
+    text-align: center;
   }
   
-  #burger-list,
-  #step-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  .button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
     padding: 10px;
-    gap: 10px;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto; /* 中央に配置 */
+    justify-items: center; /* グリッドアイテムを中央寄せ */
   }
   
-  button {
-    padding: 12px 16px;
-    font-size: 4vw;
+  
+  .button-grid button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ff7043;
     border: none;
     border-radius: 12px;
-    background-color: #a1fb85;
-    transition: background-color 0.3s ease;
-    flex-shrink: 0;
+    padding: 12px 8px;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    text-align: center;
   }
   
-  button:hover {
-    background-color: #73f925;
+  .button-grid button img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 4px;
   }
   
-  .step-button {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  .button-grid button span {
+    margin-top: 4px;
+    font-size: 0.95rem;
+    word-break: break-word; /* 長い単語も折り返す */
+    text-align: center;
+    line-height: 1.2;
   }
   
-  .step-button img {
-    width: 32px;
-    height: 32px;
+  
+  .game-button {
+    background: #ff7043;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
   }
   
-  #result {
-    font-size: 8vw;
-    margin: 20px;
-    color: #333;
+  .game-button:hover,
+  .button-grid button:hover {
+    background: #f4511e;
+    transform: scale(1.05);
+  }
+  
+  .result-text {
+    font-size: 2.3rem;
+    margin: 25px 10px;
+    color: #d84315;
+    text-align: center;
+  }
+  
+  .screen {
+    display: none;
+    width: 100%;
+  }
+  
+  .screen.active {
+    display: block;
   }
   
   .hidden {
     display: none;
   }
   
-  @media (min-width: 768px) {
-    button {
-      font-size: 18px;
-      padding: 10px 24px;
+  .button-row {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .button-grid button,
+.step-button {
+  width: 140px;     /* 固定幅 */
+  height: 120px;    /* 固定高さ */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+
+.button-grid button span,
+.step-button span {
+  word-break: break-word;
+  line-height: 1.2;
+  font-size: 0.95rem;
+  text-align: center;
+  max-width: 100%;
+}
+
+.step-button img {
+    max-width: 40px;
+    height: auto;
+    margin-bottom: 5px;
+  }
+    
+  
+  /* モバイル向け最適化 */
+  @media screen and (max-width: 480px) {
+    body {
+        overflow-x: hidden; /* 横スクロール防止 */
+      }
+      
+      html {
+        overflow-x: hidden;
+      }
+    
+    .title {
+      font-size: 2rem;
     }
   
-    h1, h2 {
-      font-size: 32px;
+    .subtitle {
+      font-size: 1.5rem;
     }
   
-    #result {
-      font-size: 40px;
+    .game-button {
+      font-size: 1rem;
+      padding: 10px 14px;
+    }
+  
+    .button-grid button img {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .result-text {
+      font-size: 2rem;
     }
   }
   
