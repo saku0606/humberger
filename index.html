@@ -7,17 +7,19 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="menu-screen">
-    <h1>🍔 ハンバーガーを選んで</h1>
-    <div id="burger-list"></div>
+  <div id="menu-screen" class="screen active">
+    <h1 class="title">🍔 ハンバーガーを選ぶ</h1>
+    <div id="burger-list" class="button-grid"></div>
   </div>
 
-  <div id="game-screen" class="hidden">
-    <h2 id="selected-burger-name"></h2>
-    <div id="step-buttons"></div>
-    <div id="result"></div>
-    <button id="retry-button" class="hidden">もう一度</button>
-    <button id="return-button" class="hidden">メニューに戻る</button>
+  <div id="game-screen" class="screen">
+    <h2 id="selected-burger-name" class="subtitle"></h2>
+    <div id="step-buttons" class="button-grid"></div>
+    <div id="result" class="result-text"></div>
+    <div class="button-row">
+      <button id="retry-button" class="game-button hidden">🔁 やり直す</button>
+      <button id="return-button" class="game-button hidden">⬅️ メニューに戻る</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
