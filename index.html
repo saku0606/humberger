@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ハンバーガー作りゲーム</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="menu-screen">
+    <h1>🍔 ハンバーガーを選んで</h1>
+    <div id="burger-list"></div>
+  </div>
+
+  <div id="game-screen" class="hidden">
+    <h2 id="selected-burger-name"></h2>
+    <div id="step-buttons"></div>
+    <div id="result"></div>
+    <button id="retry-button" class="hidden">もう一度</button>
+    <button id="return-button" class="hidden">メニューに戻る</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
